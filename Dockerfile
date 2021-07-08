@@ -1,20 +1,9 @@
-# This is apache web server on Ubuntu server
-
-FROM ubuntu:12.04
-
-MAINTAINER Amit <shrma85.amit@gmail.com>
-
-LABEL version="1.0" \
-        release="2021-08-07"
-
-RUN apt-get update && apt-get install -y apache2 && apt-get clean
-
-ENV APACHE_RUN_USER www-data
-ENV APACHE_RUN_GROUP www-data
-ENV APACHE_LOG_DIR  /var/log
-
-EXPOSE 80
+FROM ubuntu 
+RUN apt-get update 
+RUN apt-get install –y apache2 
+RUN apt-get install –y apache2-utils 
+RUN apt-get clean 
+EXPOSE 80 CMD [“apache2ctl”, “-D”, “FOREGROUND”]
 
 COPY index.html /var/www/html
 
-CMD ["/usr/sbin/apache2","-D","FOREGROUND"]
