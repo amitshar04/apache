@@ -2,7 +2,7 @@
 
 FROM ubuntu:12.04
 
-MAINTAINER Amit Sharma <shrma85.amit@gmail.com>
+MAINTAINER Amit <shrma85.amit@gmail.com>
 
 LABEL version="1.0" \
         release="2021-08-07"
